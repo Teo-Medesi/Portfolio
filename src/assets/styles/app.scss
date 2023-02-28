@@ -2,13 +2,14 @@ $bgcolor: #0C0B15;
 $primary: #F52789;
 $secondary: #8E49B2;
 $tertiary: #ff5e00;
-$black1: #222222;
 $white1: #c8c8c8;
 
-$black2: #333333;
-$black3: #444444;
-$black4: #555555;
-$black5: #999999;
+$black1: #171717;
+$black2: #232323;
+$black3: #343434;
+$black4: #454545;
+$black5: #898989;
+$black6: #ddff;
 
 * {
     margin: 0;
@@ -27,7 +28,7 @@ body {
 .container {
     background-color: $bgcolor;
     font-size: 1rem;
-    font-family: "Tilt Neon", cursive;
+    font-family: "Inter", sans-serif;
 }
 
 @keyframes color {
