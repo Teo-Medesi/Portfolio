@@ -1,0 +1,48 @@
+@import "app.scss";
+
+nav {
+    font-family: "Inter";
+    display: flex;
+    padding: 0% 5%;
+    flex-direction: row;
+    height: 12vh;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    color: $white1;
+
+    .logo {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .links {
+        :hover {
+            color: $primary;    
+        }
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+    }
+
+    button {
+
+        ::hover {
+            color: $primary;
+        }
+
+        box-shadow: 3px 3px $tertiary;
+
+
+
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+        background: $secondary;
+        color: #ffffff;
+        text-shadow: 3px 1px 3px $primary;
+        cursor: pointer;
+    }
+
+}

@@ -1,0 +1,45 @@
+$bgcolor: #0C0B15;
+$primary: #F52789;
+$secondary: #8E49B2;
+$tertiary: #ff5e00;
+$black1: #222222;
+$white1: #c8c8c8;
+
+$black2: #333333;
+$black3: #444444;
+$black4: #555555;
+$black5: #999999;
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: $bgcolor;
+    font-size: 1rem;
+    font-family: "Tilt Neon", cursive;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
