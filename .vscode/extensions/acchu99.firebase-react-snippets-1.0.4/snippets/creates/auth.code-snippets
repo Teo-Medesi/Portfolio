@@ -1,0 +1,70 @@
+{
+    "Create User With Email And Password": {
+        "prefix": "fbc-regUserEP",
+        "body": [
+            "const registerUserWithEmailAndPassword = async () => {",
+            "\t// basic client side auth // firebase sign up functionality",
+            "\ttry {",
+            "\t\tconst res = await createUserWithEmailAndPassword(auth, username, password);",
+            "\t\tconsole.log(res); // add alert for success // add ui functionalities on successful sign up",
+            "\t} catch (error) {",
+            "\t\tconsole.log(error); // add alert for error",
+            "\t}",
+            "};",
+        ],
+        "description": "Create User With Email And Password"
+    },
+    "Sign In User With Email And Password": {
+        "prefix": "fbc-emailPasswordLogin",
+        "body": [
+            "const loginUserWithEmailAndPassword = async () => {",
+            "\t// basic client side auth // firebase login functionality",
+            "\ttry {",
+            "\t\tconst res = await signInWithEmailAndPassword(auth, username, password);",
+            "\t\tconsole.log(res); // add alert for success // add ui functionalities on successful login",
+            "\t} catch (error) {",
+            "\t\tconsole.log(error); // add alert for error",
+            "\t}",
+            "};",
+        ],
+        "description": "Sign In User With Email And Password"
+    },
+    "Login User with Google": {
+        "prefix": "fbc-googleLogin",
+        "body": [
+            "const signInWithGoogle = async () => {",
+            "\ttry {",
+            "\t\tconst res = await signInWithPopup(auth, googleProvider);",
+            "\t\tconsole.log(res); // add alert for success // add ui functionalities on successful login",
+            "\t} catch (error) {",
+            "\t\tconsole.log(error); // add alert for error",
+            "\t}",
+            "}",
+        ],
+        "description": "Login User with Google"
+    },
+    "Create onAuthStateChanged hook": {
+        "prefix": "fbc-onAuthStateChanged",
+        "body": [
+            "useEffect(() => {",
+            "\tonAuthStateChanged(auth, (user) => {",
+            "\t\tif (user) {",
+            "\t\t\t// set react state 'user' to user",
+            "\t\t} else {",
+            "\t\t\t// set react state 'user' to null",
+            "\t\t}",
+            "\t});",
+            "}, []);",
+        ],
+        "description": "Create onAuthStateChanged hook"
+    },
+    "Logout User": {
+        "prefix": "fbc-logoutUser",
+        "body": [
+            "const logoutUser = () => {",
+            "\tsignOut(auth); // set react state 'user' to null // add alert for successful logout",
+            "}",
+        ],
+        "description": "Logout User"
+    },
+}

@@ -1,0 +1,48 @@
+{
+	"analytics-uuid": "de58f95a-17c0-4363-ad59-081a8a939339",
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1670857393890
+	},
+	"usage": true,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "109641970356627206587",
+		"email": "teo.medesi@gmail.com",
+		"email_verified": true,
+		"at_hash": "RJTVOxEtM2n4iICdMTT-_Q",
+		"iat": 1670857403,
+		"exp": 1670861003
+	},
+	"tokens": {
+		"expires_at": 1670867580946,
+		"refresh_token": "1//09joY3OCtJNdsCgYIARAAGAkSNwF-L9Ir1tudptywADcLf_rV7t8VAaPm7lra6g8zQOphUkR0oDEsqeNLZOiUpJihH0iPZmHRqC4",
+		"scopes": [],
+		"access_token": "ya29.a0AeTM1ie-irmCDLiSGoEB0PSfTAfKzGIHFVoUX019DvJ2Qua2VaOjtbRqGe5towr6Zx7DwnEhv495BmvhXP9WQUSlAewI01iKEVtuoQgmnr7QeYzVAMp9hw_XG89uO-cX4KGiC91fpTGLk5lqYbkkuuWkM9qdvrq2FTAyaCgYKAXwSARESFQHWtWOmIqusSNcPBUQatyzkbqjcNQ0171",
+		"expires_in": 3599,
+		"scope": "openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/firebase",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU1MmRlMjdmNTE1NzM3NTM5NjAwZDg5YjllZTJlNGVkNTM1ZmI1MTkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA5NjQxOTcwMzU2NjI3MjA2NTg3IiwiZW1haWwiOiJ0ZW8ubWVkZXNpQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiNzZKVW9GSXpHbV9iV3V0NUVyLXU2USIsImlhdCI6MTY3MDg2Mzk3MiwiZXhwIjoxNjcwODY3NTcyfQ.geoV-2VVTNUJ5M1yYe9bfjqSqWCIWk0ZK0-UQWx81lx8dnYSQZaRs4udb3m0Of1NwUx6-re8um4SfQyPOh9f5643mREO7UfJBuC_4Sq7nvQLZbrffh3N4DDPsCST1ay1sxiFGvX1rRblYW6AQYfjhtAQ_aF3cl0_xoFH3-YWLO6oN8r3fYzpIQxeAj9Aqnf5kK-zCD5EEYOYr9P5jGrzPrPjm6XU_EVLU9JLl8pUGtbe4bBlor6T_Vfgu24D0Npn2rU3ttEIukXGp1w-OS0cUf7T5PKSCWzvktOYhssMSD02TVLQ1aPSHWt4_IJnQ_c8WqWN8FMfgbxrV_PkqDYT0A"
+	},
+	"activeProjects": {
+		"C:\\Users\\teome\\Programming\\Web Dev\\Firebase": "firebasics-59e2e"
+	},
+	"emulator-analytics-clientId": "1d8aa23b-ffea-4bcc-9c78-841f6767f2e0",
+	"webconfig": {
+		"firebasics-59e2e": {
+			"projectId": "firebasics-59e2e",
+			"storageBucket": "firebasics-59e2e.appspot.com",
+			"apiKey": "AIzaSyByp1xdrtFaQ1Q1QV3qICubyjZyO3dWwJ4",
+			"authDomain": "firebasics-59e2e.firebaseapp.com",
+			"messagingSenderId": "37110624344"
+		}
+	}
+}

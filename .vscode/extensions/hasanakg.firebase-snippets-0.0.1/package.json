@@ -1,0 +1,65 @@
+{
+	"name": "firebase-snippets",
+	"displayName": "Firebase Snippets",
+	"description": "Firebase snippets for Visual Studio Code",
+	"version": "0.0.1",
+	"publisher": "hasanakg",
+	"icon": "images/firebase_icon.svg",
+	"engines": {
+		"vscode": "^1.13.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"firebase",
+		"snippet",
+		"firebase snippets"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hasanakg/firebase-snippets.git"
+	},
+	"bugs": {
+		"url": "https://github.com/hasanakg/firebase-snippets/issues"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/snippets.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "1418d351-3831-476d-8142-170de49f63cc",
+		"publisherId": "c9a79218-2519-486e-ba4b-f71665dd869f",
+		"publisherDisplayName": "Hasan Akgun",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1670859936597,
+		"preRelease": false
+	}
+}

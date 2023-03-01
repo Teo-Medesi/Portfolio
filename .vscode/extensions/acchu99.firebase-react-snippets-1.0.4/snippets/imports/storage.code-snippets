@@ -1,0 +1,8 @@
+{
+  // Part 0: Basic Import
+  "Import firebase storage": {
+    "prefix": "fbi-storage",
+    "body": ["import {} from \"firebase/storage\";"],
+    "description": "Import firebase storage"
+  }
+}

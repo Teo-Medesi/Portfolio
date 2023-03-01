@@ -1,0 +1,87 @@
+{
+  // v1.0.1
+  "creates a reference to a firestore collection": {
+    "prefix": "fbc-collectionRef",
+    "body": [
+      "const $collectionRefName = collection(firestore, \"$collectionName\");",
+      "export { $collectionRefName };"
+    ],
+    "description": "creates a reference to a firestore collection"
+  },
+  "get all data from the collection": {
+    "prefix": "fbc-getCollectionData",
+    "body": [
+      "const getCollectionData = async () => {",
+      "\tconst data = await getDocs($collectionRef);",
+      "\tlet values = []; // place to store your collection data",
+      "\tdata.docs.map((doc) => {",
+      "\t\tvalues.push({ ...doc.data(), id: doc.id });",
+      "\t});",
+      "};"
+    ],
+    "description": "get all data from a collection"
+  },
+  // v1.0.2
+  "get document reference": {
+    "prefix": "fbc-docRef",
+    "body": ["const docRef = doc(db, \"$collectionName\", \"$documentId\");"],
+    "description": "get document reference"
+  },
+  "get a specific document from collection": {
+    "prefix": "fbc-getDoc",
+    "body": ["const data = await getDoc($docRef);"],
+    "description": "get a specific document from collection"
+  },
+  "add a document to collection using setDoc": {
+    "prefix": "fbc-setDoc",
+    "body": ["await setDoc($docRef, $data)"],
+    "description": "add a document to collection using setDoc"
+  },
+  "update a document using setDoc": {
+    "prefix": "fbc-updateSetDoc",
+    "body": [
+      "const data = await getDoc($docRef);",
+      "await setDoc($docRef, {",
+      "\t...data.data(),",
+      "\t...updatedData,",
+      "});"
+    ],
+    "description": "update a document using setDoc"
+  },
+  "query a collection using query and where": {
+    "prefix": "fbc-queryCollectionData",
+    "body": [
+      "const q = query($collectionRef, where(\"$field\", \"$operator\", \"$value\"));",
+      "const snapShot = await getDocs(q);",
+      "let values = []; // place to store the fetched data",
+      "snapShot.forEach((doc) => {",
+      "\tvalues.push({id: doc.id, ...doc.data()});",
+      "});"
+    ],
+    "description": "query a collection using query and where"
+  },
+  "add a document to collection using addDoc": {
+    "prefix": "fbc-addDoc",
+    "body": ["addDoc($collectionRef, data);"],
+    "description": "add a document to collection using addDoc"
+  },
+  "update a document to collection using updateDoc": {
+    "prefix": "fbc-updateDoc",
+    "body": ["await updateDoc($docRef, data);"],
+    "description": "update a document to collection using updateDoc"
+  },
+  "delete a document using deleteDoc": {
+    "prefix": "fbc-deleteDoc",
+    "body": ["await deleteDoc($docRef);"],
+    "description": "delete a document using deleteDoc"
+  },
+  "listen to document updates in real-time": {
+    "prefix": "fbc-onSnapshot",
+    "body": [
+      "onSnapshot($docRef, snapshot => {",
+      "\tconst data = snapshot.data()",
+      "})"
+    ],
+    "description": "listen to a document with the onSnapshot"
+  }
+}

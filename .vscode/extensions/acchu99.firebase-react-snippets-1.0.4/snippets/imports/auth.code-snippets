@@ -1,0 +1,62 @@
+{
+  // Part 0: Basic Import
+  "Import firebase auth": {
+    "prefix": "fbi-auth",
+    "body": ["import {} from \"firebase/auth\";"],
+    "description": "Import firebase auth"
+  },
+  // Part 1: Auth Provider Imports
+  "Import firebase google provider": {
+    "prefix": "fbi-googleProvider",
+    "body": ["import { GoogleAuthProvider } from \"firebase/auth\";"],
+    "description": "Import firebase google provider"
+  },
+  "Import firebase facebook provider": {
+    "prefix": "fbi-facebookProvider",
+    "body": ["import { FacebookAuthProvider } from \"firebase/auth\";"],
+    "description": "Import firebase facebook provider"
+  },
+  "Import firebase twitter provider": {
+    "prefix": "fbi-twitterProvider",
+    "body": ["import { TwitterAuthProvider } from \"firebase/auth\";"],
+    "description": "Import firebase twitter provider"
+  },
+  "Import firebase phone provider": {
+    "prefix": "fbi-phoneProvider",
+    "body": ["import { PhoneAuthProvider } from \"firebase/auth\";"],
+    "description": "Import firebase phone provider"
+  },
+  "Import firebase github provider": {
+    "prefix": "fbi-githubProvider",
+    "body": ["import { GithubAuthProvider } from \"firebase/auth\";"],
+    "description": "Import firebase github provider"
+  },
+  // Part 2: Other Imports
+  "Import firebase createUserWithEmailAndPassword": {
+    "prefix": "fbi-createUserWithEmailAndPassword",
+    "body": [
+      "import { createUserWithEmailAndPassword } from \"firebase/auth\";"
+    ],
+    "description": "Import firebase createUserWithEmailAndPassword"
+  },
+  "Import firebase signInWithEmailAndPassword": {
+    "prefix": "fbi-signInWithEmailAndPassword",
+    "body": ["import { signInWithEmailAndPassword } from \"firebase/auth\";"],
+    "description": "Import firebase signInWithEmailAndPassword"
+  },
+  "Import firebase signInWithPopup": {
+    "prefix": "fbi-signInWithPopup",
+    "body": ["import { signInWithPopup } from \"firebase/auth\";"],
+    "description": "Import firebase signInWithPopup"
+  },
+  "Import firebase signOut": {
+    "prefix": "fbi-signOut",
+    "body": ["import { signOut } from \"firebase/auth\";"],
+    "description": "Import firebase signOut"
+  },
+  "Import firebase onAuthStateChanged": {
+    "prefix": "fbi-onAuthStateChanged",
+    "body": ["import { onAuthStateChanged } from \"firebase/auth\";"],
+    "description": "Import firebase onAuthStateChanged"
+  }
+}

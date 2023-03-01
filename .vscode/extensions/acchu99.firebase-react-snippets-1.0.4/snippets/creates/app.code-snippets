@@ -1,0 +1,28 @@
+{
+    "firebase initializeApp boilerplate code": {
+        "prefix": "fbc-initApp",
+        "body": [
+            "import { initializeApp } from \"firebase/app\";",
+            "import { getAuth } from \"firebase/auth\";",
+            "import { getFirestore, collection } from \"firebase/firestore\";",
+            "import { getStorage } from \"firebase/storage\";",
+            "",
+            "const app = initializeApp({",
+            "\tapiKey: $apiKey,",
+            "\tauthDomain: $authDomain,",
+            "\tprojectId: $projectId,",
+            "\tstorageBucket: $storageBucket,",
+            "\tmessagingSenderId: $messagingSenderId,",
+            "\tappId: $appId,",
+            "\tmeasurementId: $measurementId,",
+            "})",
+            "",
+            "const auth = getAuth(app);",
+            "const firestore = getFirestore(app);",
+            "const storage = getStorage(app);",
+            "",
+            "export { auth, firestore, storage };",
+        ],
+        "description": "firebase initializeApp boilerplate code"
+    },
+}

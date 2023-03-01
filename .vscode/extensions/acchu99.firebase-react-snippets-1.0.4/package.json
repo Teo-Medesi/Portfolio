@@ -1,0 +1,145 @@
+{
+	"name": "firebase-react-snippets",
+	"displayName": "Firebase-React Snippets",
+	"description": "Firebase v9 snippets for React and frameworks based on React",
+	"version": "1.0.4",
+	"publisher": "acchu99",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Ashwin1999/firebase-react-snippets"
+	},
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.62.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/imports/app.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/imports/auth.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/imports/firestore.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/imports/storage.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/creates/app.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/creates/auth.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/creates/firestore.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/imports/app.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/imports/auth.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/imports/firestore.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/imports/storage.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/creates/app.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/creates/auth.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/creates/firestore.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/imports/app.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/imports/auth.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/imports/firestore.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/imports/storage.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/creates/app.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/creates/auth.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/creates/firestore.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/imports/app.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/imports/auth.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/imports/firestore.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/imports/storage.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/creates/app.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/creates/auth.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/creates/firestore.code-snippets"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "db01041e-3532-4f8f-a276-b3fc82f90165",
+		"publisherId": "0ae1a009-9eff-47dd-af50-79c1b5a9c633",
+		"publisherDisplayName": "Ashwin Bala",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1670863231677,
+		"preRelease": false
+	}
+}

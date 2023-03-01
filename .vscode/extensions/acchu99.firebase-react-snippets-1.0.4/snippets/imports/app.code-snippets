@@ -1,0 +1,24 @@
+{
+  // Part 0: Basic Import
+  "Import firebase app": {
+    "prefix": "fbi-app",
+    "body": ["import {} from \"firebase/app\";"],
+    "description": "Import firebase app"
+  },
+  // Part 1: Other Imports
+  "Import firebase initializeApp": {
+    "prefix": "fbi-initApp",
+    "body": ["import { initializeApp } from \"firebase/app\";"],
+    "description": "Import firebase initializeApp"
+  },
+  "Import firebase getApp/getApps": {
+    "prefix": "fbi-getApp(s)",
+    "body": ["import { getApp, getApps } from \"firebase/app\";"],
+    "description": "Import firebase deleteApp"
+  },
+  "Import firebase deleteApp": {
+    "prefix": "fbi-delApp",
+    "body": ["import { deleteApp } from \"firebase/app\";"],
+    "description": "Import firebase deleteApp"
+  }
+}

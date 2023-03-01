@@ -1,0 +1,61 @@
+{
+  // Part 0: Basic Import
+  "Import firebase firestore": {
+    "prefix": "fbi-firestore",
+    "body": ["import {} from \"firebase/firestore\";"],
+    "description": "Import firebase firestore"
+  },
+  // Part 1: Other Imports
+  "Import firebase getDocs": {
+    "prefix": "fbi-getDocs",
+    "body": ["import { getDocs } from \"firebase/firestore\""],
+    "description": "Import firebase getDocs"
+  },
+  // v1.0.1
+  "Import firebase collection": {
+    "prefix": "fbi-collection",
+    "body": ["import { collection } from \"firebase/firestore\""],
+    "description": "Import firebase collection"
+  },
+  // v1.0.2
+  "Import firebase doc": {
+    "prefix": "fbi-doc",
+    "body": ["import { doc } from \"firebase/firestore\""],
+    "description": "Import firebase doc"
+  },
+  "Import firebase doc and getDoc": {
+    "prefix": "fbi-getDoc",
+    "body": ["import { doc, getDoc } from \"firebase/firestore\""],
+    "description": "Import firebase doc and getDoc"
+  },
+  "Import firebase setDoc": {
+    "prefix": "fbi-setDoc",
+    "body": ["import { setDoc } from \"firebase/firestore\""],
+    "description": "Import firebase setDoc"
+  },
+  "Import firebase addDoc": {
+    "prefix": "fbi-addDoc",
+    "body": ["import { addDoc } from \"firebase/firestore\""],
+    "description": "Import firebase addDoc"
+  },
+  "Import firebase query and where": {
+    "prefix": "fbi-queryWhere",
+    "body": ["import { query, where } from \"firebase/firestore\";"],
+    "description": "Import firebase query and where"
+  },
+  "Import firebase updateDoc": {
+    "prefix": "fbi-updateDoc",
+    "body": ["import { updateDoc } from \"firebase/firestore\""],
+    "description": "Import firebase updateDoc"
+  },
+  "Import firebase deleteDoc": {
+    "prefix": "fbi-deleteDoc",
+    "body": ["import { deleteDoc } from \"firebase/firestore\""],
+    "description": "Import firebase deleteDoc"
+  },
+  "Import firebase onSnapshot": {
+    "prefix": "fbi-onSnapshot",
+    "body": ["import { onSnapshot } from \"firebase/firestore\""],
+    "description": "Import firebase onSnapshot"
+  }
+}
