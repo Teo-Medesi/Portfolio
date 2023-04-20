@@ -11,10 +11,13 @@
   "dependencies": {
     "@react-three/drei": "^9.56.26",
     "@react-three/fiber": "^8.11.2",
+    "framer-motion": "^10.12.4",
     "gltfjsx": "^6.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.3",
     "react-router-dom": "^6.8.1",
+    "sass": "^1.62.0",
     "three": "^0.149.0"
   },
   "devDependencies": {

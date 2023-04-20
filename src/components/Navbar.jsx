@@ -1,9 +1,10 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import "../assets/styles/navbar.scss"
 
 const Navbar = () => {
     return (
-        <nav>
+        <motion.nav initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 2}}}>
             <p className='logo'>Teo Međeši</p>
             <ul className='links'>
                 <li>Home</li>
@@ -13,7 +14,7 @@ const Navbar = () => {
             </ul>
 
             <button>Contact me</button>
-        </nav>
+        </motion.nav>
     )
 }
 

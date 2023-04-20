@@ -1,9 +1,11 @@
 $bgcolor: #0C0B15;
+$bgcolor2: #050505;
 $primary: #F52789;
 $secondary: #8E49B2;
 $tertiary: #ff5e00;
 $white1: #c8c8c8;
 
+$black0: #0C0C0C;   
 $black1: #171717;
 $black2: #232323;
 $black3: #343434;
@@ -15,6 +17,7 @@ $black6: #ddff;
     margin: 0;
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 ul {
@@ -23,6 +26,23 @@ ul {
 
 body {
     overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    background-color: $black1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}
+
+button {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: white;
 }
 
 .container {
