@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { MeshReflectorMaterial, useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
 export function Planet(props) {
