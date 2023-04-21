@@ -5,10 +5,9 @@ span {
 }
 
 .home {
-    background: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.92)), url("../gifs/grid.gif");
+    background: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.92)), url("../gifs/grid2.gif");
     background-size: 100%;
     height: 100vh;
-
 }
 
 footer {
@@ -231,7 +230,9 @@ footer {
 header {
     padding: 0 5%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 88vh;
     color: $white1;
 
@@ -243,15 +244,21 @@ header {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        gap: 2%;
+        gap: 1rem;
 
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            text-align: center;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
         }
     }
 
@@ -333,3 +340,4 @@ header {
         height: 100px;
     }
 }
+

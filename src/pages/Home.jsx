@@ -1,8 +1,5 @@
 import "../assets/styles/home.scss"
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { Planet } from '../../public/Planet'
 import Navbar from "../components/Navbar"
 import html from "../assets/images/skills/html.png"
 import css from "../assets/images/skills/css.png"
@@ -14,7 +11,7 @@ import react from "../assets/images/skills/react.png"
 import nextjs from "../assets/images/skills/next.png"
 import firebase from "../assets/images/skills/firebase.png"
 import github from "../assets/images/skills/github.svg"
-import { motion, useAnimate, useInView } from "framer-motion"
+import { stagger, motion, useAnimate, useInView } from "framer-motion"
 
 
 
@@ -43,6 +40,11 @@ const useTypeWriter = (text, delay) => {
     }
   }, [isInit, typeText]);
 
+  const reset = () => {
+    setTextPreview("");
+    typeText();
+  }
+
   useEffect(() => {
     setIsInit(true)
   }, []);
@@ -68,7 +70,26 @@ const Home = () => {
   const isContactInView = useInView(contactScope);
 
   useEffect(() => {
-    
+    if (isSkillsInView) {
+      animateSkills(".text, .row, .row-2", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    } 
+    else{
+      animateSkills(".text, .row, .row-2", {opacity: 0});
+    }
+
+    if (isAboutInView && !isSkillsInView) {
+      animateAbout(".about-header, .about-paragraph, a", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    }
+    else {
+      animateAbout(".about-paragraph, .about-header, a", {opacity: 0});
+    }
+
+    if (isContactInView && !isAboutInView) {
+      animateContact(".text, .input-field", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    }
+    else {
+      animateContact(".text, .input-field", {opacity: 0});
+    }
   }, [isSkillsInView, isAboutInView, isContactInView])
 
 
@@ -80,20 +101,13 @@ const Home = () => {
           <h3>{headerText1}<span>{headerText1Span}</span></h3>
           <h1>{headerText2}<span>{headerText2Span}</span>{headerText3}</h1>
           <p>{headerText4}</p>
-
         </div>
 
-        <div className='header-image'>
-          <div className="headerCanvas">
-            <Canvas camera={{ position: [0, 0, 1.5] }}>
-              <Scene />
-            </Canvas>
-          </div>
-        </div>
-
+        
+        
       </header>
 
-      <section ref={skillsScope} className="skills-section">
+      <section className="skills-section">
         <div class="shape-divider">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
@@ -110,15 +124,15 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="section-panel">
-          <motion.div initial={{opacity: 0}} animate={{opacity: 1}} className='text'>
+        <div ref={skillsScope} className="section-panel">
+          <motion.div initial={{opacity: 0}} className='text'>
             <h1>Services I offer</h1>
             <p>Reprehenderit laboris amet magna sit eiusmod adipisicing pariatur officia. Enim cillum officia in aliqua eiusmod. Esse minim officia mollit qui occaecat qui. </p>
           </motion.div>
 
 
-          <motion.ul initial={{opacity: 0}} animate={{opacity: 1}}>
-            <div className='row'>
+          <ul>
+            <motion.div initial={{opacity: 0}} className='row'>
               <div>
                 <img src={html} alt="HTML" />
                 <h3>HTML</h3>
@@ -139,9 +153,9 @@ const Home = () => {
                 <img src={bootstrap} alt="BOOTSTRAP" />
                 <h3>BOOTSTRAP</h3>
               </div>
-            </div>
+            </motion.div>
 
-            <div className='row'>
+            <motion.div initial={{opacity: 0}} className='row row-2'>
               <div>
                 <img src={javascript} alt="JAVASCRIPT" />
                 <h3>JAVASCRIPT</h3>
@@ -162,38 +176,38 @@ const Home = () => {
                 <img src={firebase} alt="FIREBASE" />
                 <h3>FIREBASE</h3>
               </div>
-            </div>
-          </motion.ul>
+            </motion.div>
+          </ul>
         </div>
       </section>
-      <section ref={aboutScope} className="about-me-container">
-        <article className="about-me">
+      <section className="about-me-container">
+        <motion.article ref={aboutScope} className="about-me">
           <div className="text-col">
-            <h1>About me</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum sit, laborum enim ullam ut quidem vel, eaque atque officiis accusamus velit rerum totam ipsa id inventore doloribus architecto unde, commodi excepturi maxime! Tempore sunt assumenda ipsum vel. Dignissimos, necessitatibus?</p>
+            <motion.h1 initial={{opacity: 0}} className="about-header">About me</motion.h1>
+            <motion.p initial={{opacity: 0}} className="about-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum sit, laborum enim ullam ut quidem vel, eaque atque officiis accusamus velit rerum totam ipsa id inventore doloribus architecto unde, commodi excepturi maxime! Tempore sunt assumenda ipsum vel. Dignissimos, necessitatibus?</motion.p>
           </div>
-          <a href="https://github.com/Teo-Medesi" className="github-button"><img src={github} alt="github" /></a>
-        </article>
+          <motion.a initial={{opacity: 0}} href="https://github.com/Teo-Medesi" className="github-button"><img src={github} alt="github" /></motion.a>
+        </motion.article>
       </section>
 
-      <section ref={contactScope} className="contact-me-container">
-        <article className="contact-me">
-          <div className="text">
+      <section className="contact-me-container">
+        <article ref={contactScope} className="contact-me">
+          <motion.div initial={{opacity: 0}} className="text">
             <h1>Contact Me!</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatibus ipsam autem dolorem esse nobis aperiam nisi praesentium molestiae quasi.</p>
-          </div>
-          <div className="input-field">
+          </motion.div>
+          <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="name">Name</label>
             <input placeholder="John Doe" type="text" />
-          </div>
-          <div className="input-field">
+          </motion.div>
+          <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="email">Name</label>
             <input placeholder="example123@gmail.com" type="email" />
-          </div>
-          <div className="input-field">
+          </motion.div>
+          <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="message">Message</label>
             <textarea placeholder="Enter your message here..." type="text" ></textarea>
-          </div>
+          </motion.div>
 
           <button>Submit</button>
         </article>
@@ -204,16 +218,6 @@ const Home = () => {
       </footer>
 
     </div>
-  )
-}
-
-const Scene = () => {
-  return (
-    <>
-      <pointLight intensity={0.1} />
-      <Planet />
-      <OrbitControls />
-    </>
   )
 }
 
