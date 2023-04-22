@@ -10,7 +10,7 @@ import JAVASCRIPT from "../assets/images/skills2/javascript.svg"
 import REACT from "../assets/images/skills2/react.svg"
 import NEXTJS from "../assets/images/skills2/next.svg"
 import FIREBASE from "../assets/images/skills2/firebase.svg"
-import GITHUB from "../assets/images/skills/github.svg"
+import GITHUB from "../assets/images/skills2/github2.svg"
 import GITHUB2 from "../assets/images/skills2/github.svg"
 import { stagger, motion, useAnimate, useInView } from "framer-motion"
 
