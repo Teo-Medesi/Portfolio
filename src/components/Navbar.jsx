@@ -13,7 +13,7 @@ const Navbar = () => {
                 <li>Blog</li>
             </ul>
 
-            <button>Contact me</button>
+            <motion.button whileTap={{scale: 0.8}}>Contact me</motion.button>
         </motion.nav>
     )
 }

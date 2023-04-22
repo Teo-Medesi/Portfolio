@@ -1,16 +1,17 @@
 import "../assets/styles/home.scss"
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import Navbar from "../components/Navbar"
-import html from "../assets/images/skills/html.png"
-import css from "../assets/images/skills/css.png"
-import tailwind from "../assets/images/skills/tailwind.png"
-import bootstrap from "../assets/images/skills/bootstrap.png"
-import sass from "../assets/images/skills/sass.png"
-import javascript from "../assets/images/skills/javascript.png"
-import react from "../assets/images/skills/react.png"
-import nextjs from "../assets/images/skills/next.png"
-import firebase from "../assets/images/skills/firebase.png"
-import github from "../assets/images/skills/github.svg"
+import HTML from "../assets/images/skills2/html.svg"
+import CSS from "../assets/images/skills2/css.svg"
+import TAILWIND from "../assets/images/skills2/tailwind.svg"
+import BOOTSTRAP from "../assets/images/skills2/bootstrap.svg"
+import SASS from "../assets/images/skills2/sass.svg"
+import JAVASCRIPT from "../assets/images/skills2/javascript.svg"
+import REACT from "../assets/images/skills2/react.svg"
+import NEXTJS from "../assets/images/skills2/next.svg"
+import FIREBASE from "../assets/images/skills2/firebase.svg"
+import GITHUB from "../assets/images/skills/github.svg"
+import GITHUB2 from "../assets/images/skills2/github.svg"
 import { stagger, motion, useAnimate, useInView } from "framer-motion"
 
 
@@ -40,11 +41,6 @@ const useTypeWriter = (text, delay) => {
     }
   }, [isInit, typeText]);
 
-  const reset = () => {
-    setTextPreview("");
-    typeText();
-  }
-
   useEffect(() => {
     setIsInit(true)
   }, []);
@@ -69,27 +65,21 @@ const Home = () => {
   const isAboutInView = useInView(aboutScope);
   const isContactInView = useInView(contactScope);
 
+  const skills1 = [{name: "HTML", src: HTML}, {name: "CSS", src: CSS}, {name: "TAILWIND", src: TAILWIND}, {name: "SASS", src: SASS},  {name: "BOOTSTRAP", src: BOOTSTRAP}];
+  const skills2 = [{name: "JAVASCRIPT", src: JAVASCRIPT}, {name: "NEXTJS", src: NEXTJS}, {name: "REACT", src: REACT},{name: "FIREBASE", src: FIREBASE}, {name: "GITHUB", src: GITHUB2}];
+
   useEffect(() => {
-    if (isSkillsInView) {
-      animateSkills(".text, .row, .row-2", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
-    } 
-    else{
-      animateSkills(".text, .row, .row-2", {opacity: 0});
-    }
+    // animate skills section
+    if (isSkillsInView) animateSkills(".text, .row, .row-2", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    else animateSkills(".text, .row, .row-2", {opacity: 0});
 
-    if (isAboutInView && !isSkillsInView) {
-      animateAbout(".about-header, .about-paragraph, a", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
-    }
-    else {
-      animateAbout(".about-paragraph, .about-header, a", {opacity: 0});
-    }
+    // animate about section
+    if (isAboutInView && !isSkillsInView) animateAbout(".about-header, .about-paragraph, a", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    else animateAbout(".about-paragraph, .about-header, a", {opacity: 0});
 
-    if (isContactInView && !isAboutInView) {
-      animateContact(".text, .input-field", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
-    }
-    else {
-      animateContact(".text, .input-field", {opacity: 0});
-    }
+    // animate contact section
+    if (isContactInView && !isAboutInView) animateContact(".text, .input-field, .submit-button", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    else animateContact(".text, .input-field, .submit-button", {opacity: 0});
   }, [isSkillsInView, isAboutInView, isContactInView])
 
 
@@ -98,8 +88,8 @@ const Home = () => {
       <Navbar />
       <header>
         <div className='header-text'>
-          <h3>{headerText1}<span>{headerText1Span}</span></h3>
-          <h1>{headerText2}<span>{headerText2Span}</span>{headerText3}</h1>
+          <h5>{headerText1}<span className="h5-span">{headerText1Span}</span></h5>
+          <h1>{headerText2}<span className="h1-span">{headerText2Span}</span>{headerText3}</h1>
           <p>{headerText4}</p>
         </div>
 
@@ -126,56 +116,18 @@ const Home = () => {
 
         <div ref={skillsScope} className="section-panel">
           <motion.div initial={{opacity: 0}} className='text'>
-            <h1>Services I offer</h1>
-            <p>Reprehenderit laboris amet magna sit eiusmod adipisicing pariatur officia. Enim cillum officia in aliqua eiusmod. Esse minim officia mollit qui occaecat qui. </p>
+            <h3>Services I offer</h3>
+            <p className="sm">Reprehenderit laboris amet magna sit eiusmod adipisicing pariatur officia. Enim cillum officia in aliqua eiusmod. Esse minim officia mollit qui occaecat qui. </p>
           </motion.div>
 
 
           <ul>
             <motion.div initial={{opacity: 0}} className='row'>
-              <div>
-                <img src={html} alt="HTML" />
-                <h3>HTML</h3>
-              </div>
-              <div>
-                <img src={css} alt="CSS" />
-                <h3>CSS</h3>
-              </div>
-              <div>
-                <img src={tailwind} alt="TAILWINDCSS" />
-                <h3>TAILWIND</h3>
-              </div>
-              <div>
-                <img src={sass} alt="SASS" />
-                <h3>SASS</h3>
-              </div>
-              <div>
-                <img src={bootstrap} alt="BOOTSTRAP" />
-                <h3>BOOTSTRAP</h3>
-              </div>
+              {skills1.map((skill, index) => <Skill skill={skill.name} src={skill.src} index={index} />)}
             </motion.div>
 
             <motion.div initial={{opacity: 0}} className='row row-2'>
-              <div>
-                <img src={javascript} alt="JAVASCRIPT" />
-                <h3>JAVASCRIPT</h3>
-              </div>
-              <div>
-                <img src={react} alt="REACT JS" />
-                <h3>REACT JS</h3>
-              </div>
-              <div>
-                <img src={nextjs} alt="REACT THREE FIBER" />
-                <h3>NEXT JS</h3>
-              </div>
-              <div>
-                <img src={github} alt="GITHUB" />
-                <h3>GITHUB</h3>
-              </div>
-              <div>
-                <img src={firebase} alt="FIREBASE" />
-                <h3>FIREBASE</h3>
-              </div>
+              {skills2.map((skill, index) => <Skill skill={skill.name} src={skill.src} index={index} />)}
             </motion.div>
           </ul>
         </div>
@@ -183,25 +135,25 @@ const Home = () => {
       <section className="about-me-container">
         <motion.article ref={aboutScope} className="about-me">
           <div className="text-col">
-            <motion.h1 initial={{opacity: 0}} className="about-header">About me</motion.h1>
+            <motion.h3 initial={{opacity: 0}} className="about-header">About me</motion.h3>
             <motion.p initial={{opacity: 0}} className="about-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum sit, laborum enim ullam ut quidem vel, eaque atque officiis accusamus velit rerum totam ipsa id inventore doloribus architecto unde, commodi excepturi maxime! Tempore sunt assumenda ipsum vel. Dignissimos, necessitatibus?</motion.p>
           </div>
-          <motion.a initial={{opacity: 0}} href="https://github.com/Teo-Medesi" className="github-button"><img src={github} alt="github" /></motion.a>
+          <motion.a initial={{opacity: 0}} href="https://github.com/Teo-Medesi" className="github-button"><img src={GITHUB} alt="github" /></motion.a>
         </motion.article>
       </section>
 
       <section className="contact-me-container">
         <article ref={contactScope} className="contact-me">
-          <motion.div initial={{opacity: 0}} className="text">
-            <h1>Contact Me!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatibus ipsam autem dolorem esse nobis aperiam nisi praesentium molestiae quasi.</p>
+        <motion.div initial={{opacity: 0}} className="text">
+            <h6>Contact Me!</h6>
+            <p className="xsm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatibus ipsam autem dolorem esse nobis aperiam nisi praesentium molestiae quasi.</p>
           </motion.div>
           <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="name">Name</label>
             <input placeholder="John Doe" type="text" />
           </motion.div>
           <motion.div initial={{opacity: 0}} className="input-field">
-            <label htmlFor="email">Name</label>
+            <label htmlFor="email">Email</label>
             <input placeholder="example123@gmail.com" type="email" />
           </motion.div>
           <motion.div initial={{opacity: 0}} className="input-field">
@@ -209,14 +161,23 @@ const Home = () => {
             <textarea placeholder="Enter your message here..." type="text" ></textarea>
           </motion.div>
 
-          <button>Submit</button>
+          <motion.button whileTap={{scale: 0.975}} initial={{opacity: 0}} className="submit-button">Submit</motion.button>
         </article>
       </section>
 
       <footer>
-        <p>Images by <a href="https://pixabay.com/users/amusic11-21978593/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6806813">Andrea Music</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6806813">Pixabay</a></p>
+        <p className="xsm">Images by <a href="https://pixabay.com/users/amusic11-21978593/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6806813">Andrea Music</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6806813">Pixabay</a></p>
       </footer>
 
+    </div>
+  )
+}
+
+const Skill = ({skill, src, index}) => {
+  return (
+    <div className="skill" key={index}>
+      <img loading="lazy" src={src} alt={skill} />
+      <p>{skill}</p>
     </div>
   )
 }

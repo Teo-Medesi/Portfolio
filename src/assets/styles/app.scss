@@ -18,7 +18,41 @@ $black6: #ddff;
     border: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: calc(15px + 0.39vw);
 }
+
+.sm {
+    font-size: calc(12px + 0.39vw) !important;
+}
+
+.xsm {
+    font-size: calc(10px + 0.39vw) !important;
+}
+
+h1 {
+    font-size: calc(2.5rem + 0.39vw);
+}
+
+h2 {
+    font-size: calc(2.25rem + 0.39vw) ;
+}
+
+h3 {
+    font-size: calc(2rem + 0.39vw) ;
+}
+
+h4 {
+    font-size: calc(1.75rem + 0.39vw) ;
+}
+
+h5 {
+    font-size: calc(1.5rem + 0.39vw) ;
+}
+
+h6 {
+    font-size: calc(1.25rem + 0.39vw) ;
+}
+
 
 ul {
     list-style: none;
