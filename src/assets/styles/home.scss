@@ -122,7 +122,7 @@ footer {
         .text-col {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 2rem;
         }
 
         .about-header {
@@ -130,10 +130,16 @@ footer {
             color: $secondary;
             text-align: center;
         }
+
         p {
             color: $white1;
             font-size: calc(1rem + 0.39vw);
             text-align:justify;
+
+            span {
+                font-size: inherit;
+                color: $secondary;
+            }
         }
 
         .github-button {

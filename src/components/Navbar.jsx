@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import "../assets/styles/navbar.scss"
 
-const Navbar = () => {
+const Navbar = ({onContact}) => {
     return (
         <motion.nav initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 2}}}>
             <p className='logo'>Teo Međeši</p>
@@ -13,7 +13,7 @@ const Navbar = () => {
                 <li>Blog</li>
             </ul>
 
-            <motion.button whileTap={{scale: 0.8}}>Contact me</motion.button>
+            <motion.button onClick={onContact} whileTap={{scale: 0.8}}>Contact me</motion.button>
         </motion.nav>
     )
 }

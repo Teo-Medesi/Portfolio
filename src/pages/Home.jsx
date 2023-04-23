@@ -65,8 +65,17 @@ const Home = () => {
   const isAboutInView = useInView(aboutScope);
   const isContactInView = useInView(contactScope);
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   const skills1 = [{name: "HTML", src: HTML}, {name: "CSS", src: CSS}, {name: "TAILWIND", src: TAILWIND}, {name: "SASS", src: SASS},  {name: "BOOTSTRAP", src: BOOTSTRAP}];
   const skills2 = [{name: "JAVASCRIPT", src: JAVASCRIPT}, {name: "NEXTJS", src: NEXTJS}, {name: "REACT", src: REACT},{name: "FIREBASE", src: FIREBASE}, {name: "GITHUB", src: GITHUB2}];
+
+  const handleContactClick = () => {
+    contactScope.current.scrollIntoView({behavior: "smooth"});
+  }
 
   useEffect(() => {
     // animate skills section
@@ -78,14 +87,42 @@ const Home = () => {
     else animateAbout(".about-paragraph, .about-header, a", {opacity: 0});
 
     // animate contact section
-    if (isContactInView && !isAboutInView) animateContact(".text, .input-field, .submit-button", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    if (isContactInView && !isAboutInView) animateContact(".text, .input-field, .submit-button", {opacity: 1}, {duration: 1, delay: stagger(0.45)}).then(() => {
+      if (isSubmitted) animateContact(".input-field", {opacity: 0.2});
+    });
+
     else animateContact(".text, .input-field, .submit-button", {opacity: 0});
   }, [isSkillsInView, isAboutInView, isContactInView])
 
+  useEffect(() => {
+    if (isSubmitted) {
+      animateContact(".submit-button", {backgroundColor: "green", color: "white", borderRadius: "1rem"}, {duration: 1});
+      animateContact(".input-field", {opacity: 0.2}, {duration: 1});
+    }
+
+  }, [isSubmitted])
+
+  const handleSubmit = () => {
+    if (!name || !email || !message) return;
+
+    const subject = `[PORTFOLIO WEBSITE] - new message from ${name}`;
+    const body = `sender: ${email}\n message: ${message}`;
+
+    fetch("https://formspree.io/f/mayzadbr", {
+      method: "POST",
+      body: JSON.stringify({subject: subject, body: body}),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      mode:  "cors"
+    }).then(response => {
+      if (response.status === 200) setIsSubmitted(true);
+    }); 
+  }
 
   return (
-    <div className='home'>
-      <Navbar />
+      <div className='home'>
+      <Navbar onContact={handleContactClick} />
       <header>
         <div className='header-text'>
           <h5>{headerText1}<span className="h5-span">{headerText1Span}</span></h5>
@@ -117,7 +154,7 @@ const Home = () => {
         <div ref={skillsScope} className="section-panel">
           <motion.div initial={{opacity: 0}} className='text'>
             <h3>Services I offer</h3>
-            <p className="sm">Reprehenderit laboris amet magna sit eiusmod adipisicing pariatur officia. Enim cillum officia in aliqua eiusmod. Esse minim officia mollit qui occaecat qui. </p>
+            <p className="sm">Are you ready to make your website a game-changer? Let's build a website that's not only visually stunning, but also highly functional and optimized for success. </p>
           </motion.div>
 
 
@@ -136,32 +173,39 @@ const Home = () => {
         <motion.article ref={aboutScope} className="about-me">
           <div className="text-col">
             <motion.h3 initial={{opacity: 0}} className="about-header">About me</motion.h3>
-            <motion.p initial={{opacity: 0}} className="about-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum sit, laborum enim ullam ut quidem vel, eaque atque officiis accusamus velit rerum totam ipsa id inventore doloribus architecto unde, commodi excepturi maxime! Tempore sunt assumenda ipsum vel. Dignissimos, necessitatibus?</motion.p>
+            <motion.p initial={{opacity: 0}} className="about-paragraph">
+              I have always been a <span>problem solver</span> and had a keen interest in <span>building things</span>. The satisfaction I feel after a long and intense project is immeasurable. My love for <span>programming</span> and all things <span>IT</span> runs deep, and I am always eager to expand my knowledge and skills. I take great pride in <span>staying up-to-date</span> with the latest trends and techniques.
+              <br />
+              <br />
+              <span>Integrity is paramount</span>. When working with clients or future employers, I prioritize <span>listening</span> to their needs and tailoring my approach accordingly. My goal is to deliver a product that <span>exceeds their expectations</span> and provides them with tangible value.
+
+
+            </motion.p>
           </div>
           <motion.a initial={{opacity: 0}} href="https://github.com/Teo-Medesi" className="github-button"><img src={GITHUB} alt="github" /></motion.a>
         </motion.article>
       </section>
 
-      <section className="contact-me-container">
-        <article ref={contactScope} className="contact-me">
+      <section ref={contactScope} className="contact-me-container">
+        <article className="contact-me">
         <motion.div initial={{opacity: 0}} className="text">
             <h6>Contact Me!</h6>
-            <p className="xsm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatibus ipsam autem dolorem esse nobis aperiam nisi praesentium molestiae quasi.</p>
+            <p className="xsm">The first step towards success is just a message away. Contact me using the form below, and let's start building something great together!</p>
           </motion.div>
           <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="name">Name</label>
-            <input placeholder="John Doe" type="text" />
+            <input onChange={event => setName(event.target.value)} placeholder="John Doe" type="text" />
           </motion.div>
           <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="email">Email</label>
-            <input placeholder="example123@gmail.com" type="email" />
+            <input onChange={event => setEmail(event.target.value)} placeholder="example123@gmail.com" type="email" />
           </motion.div>
           <motion.div initial={{opacity: 0}} className="input-field">
             <label htmlFor="message">Message</label>
-            <textarea placeholder="Enter your message here..." type="text" ></textarea>
+            <textarea onChange={event => setMessage(event.target.value)} placeholder="Enter your message here..." type="text" ></textarea>
           </motion.div>
 
-          <motion.button whileTap={{scale: 0.975}} initial={{opacity: 0}} className="submit-button">Submit</motion.button>
+          <motion.button onClick={handleSubmit} initial={{opacity: 0}} className="submit-button">{isSubmitted ? "Thank you for your feedback!" : "Submit"}</motion.button>
         </article>
       </section>
 

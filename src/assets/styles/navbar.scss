@@ -1,7 +1,7 @@
 @import "app.scss";
 
 nav {
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     display: flex;
     padding: 0% 5%;
     flex-direction: row;
@@ -16,7 +16,7 @@ nav {
 
     .links {
         :hover {
-            color: $primary;    
+            color: $secondary;    
         }
         cursor: pointer;
         display: flex;
