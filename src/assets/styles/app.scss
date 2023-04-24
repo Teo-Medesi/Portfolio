@@ -72,6 +72,18 @@ body {
     background-color: $secondary;
 }
 
+@media only screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    html {
+        overflow: hidden;
+    }
+}
+
 button {
     padding: 1rem;
     border-radius: 0.25rem;
@@ -81,7 +93,7 @@ button {
 }
 
 .container {
-    background-color: $bgcolor;
+    background-color: #000000;
     font-size: 1rem;
     font-family: "Inter", sans-serif;
 }

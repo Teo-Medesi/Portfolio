@@ -36,7 +36,7 @@ footer {
     display: flex;   
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.92)), url("../gifs/grid.gif");
+    background: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.92)), url("../gifs/grid2.gif");
     background-size: 100%;
 
     .contact-me {
@@ -354,3 +354,13 @@ header {
     }
 }
 
+@media only screen and (max-width: 320px) {
+    header {
+        .header-text {
+
+            h1, h5, p {
+                text-align: left;
+            }
+        }
+    }
+}
