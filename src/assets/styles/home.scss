@@ -134,7 +134,7 @@ footer {
         p {
             color: $white1;
             font-size: calc(1rem + 0.39vw);
-            text-align:justify;
+            text-align: left;
 
             span {
                 font-size: inherit;
@@ -354,7 +354,11 @@ header {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 768px) {
+    .shape-divider, .shape-divider-2, .shape-divider-3 {
+        display: none;
+    }
+    
     header {
         .header-text {
 

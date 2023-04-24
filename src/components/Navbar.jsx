@@ -1,28 +1,47 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, useAnimate } from 'framer-motion'
 import "../assets/styles/navbar.scss"
 import menu from "../assets/svgs/menu.svg"
 import email from "../assets/svgs/email.svg"
 
 
 const Navbar = ({onContact}) => {
+    const [scope, animate] = useAnimate();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleNavbar = () => {
+        if (isOpen) {
+            animate(".logo-div", {backgroundColor: "#000000"});
+            animate(".links, .contact-div", {y: "-100vh", display: "none"});
+            setIsOpen(false);
+        } else {
+            setIsOpen(true);
+            animate(".logo-div", {backgroundColor: "#0C0C0C"});
+            animate(".links, .contact-div", {y: "-100vh"}, {duration: 0.01}).then(() => {
+                animate(".links, .contact-div", {y: 0, display: "flex"}, {duration: 0.5, type: "spring"});
+            });
+        }
+    }
+
+    
     return (
-        <motion.nav initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 2}}}>
-            <div className='logo-div'>
+        <motion.nav ref={scope} initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 2}}}>
+            <motion.div className='logo-div'>
                 <p className='logo'>Teo Međeši</p>
-                <img src={menu} alt="menu icon"/>
-            </div>
-            <ul className='links'>
+                <img onClick={toggleNavbar} src={menu} alt="menu icon"/>
+            </motion.div>
+
+            <motion.ul className='links'>
                 <li>Home</li>
                 <li>About</li>
                 <li>Skills</li>
                 <li>Blog</li>
-            </ul>
+            </motion.ul>
 
-            <div className="contact-div">
-                <motion.button onClick={onContact} whileTap={{scale: 0.8}}>Contact me</motion.button>
+            <motion.div onClick={onContact} className="contact-div">
+                <motion.button whileTap={{scale: 0.8}}>Contact me</motion.button>
                 <img src={email} alt="email icon" />
-            </div>
+            </motion.div>
         </motion.nav>
     )
 }
