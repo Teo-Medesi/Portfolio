@@ -367,4 +367,60 @@ header {
             }
         }
     }
+
+    .skills-section {
+        height: max-content;
+        display: block;
+        padding: 2rem;
+        
+        .text {
+            p {
+                text-align: left !important;
+            }
+        }
+
+        .section-panel {
+            width: 100%;
+            padding: 0;
+        }
+        
+        .row {
+            flex-direction: column !important;
+            gap: 2rem;
+
+            .skill {
+                padding: 1.5rem;
+            }
+        }
+    }
+
+    .about-me-container {
+        padding: 1rem 0;
+        height: max-content;
+    } 
+
+    .contact-me-container {
+        min-height: 100vh;
+        
+        p {
+            text-align: left;
+        }
+        
+        .contact-me {
+            padding: 2rem 1rem;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+
+        textarea, button, input {
+            font-size: calc(15px + 0.39vw) !important;
+        }
+        
+        textarea {
+            height: 10rem !important;
+            
+        }
+        
+    }
 }
