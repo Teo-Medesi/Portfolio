@@ -14,12 +14,10 @@ import GITHUB from "../assets/images/skills2/github2.svg"
 import GITHUB2 from "../assets/images/skills2/github.svg"
 import { stagger, motion, useAnimate, useInView } from "framer-motion"
 
-
-
 const useTypeWriter = (text, delay) => {
   const [textPreview, setTextPreview] = useState("");
   const [isInit, setIsInit] = useState(false);
-  const speed = 40;
+  const speed = 30;
 
   const typeText = async () => {
     setTimeout(() => {
@@ -50,12 +48,12 @@ const useTypeWriter = (text, delay) => {
 
 
 const Home = () => {
-  const headerText1 = useTypeWriter("Hello, I'm ", 1500);
-  const headerText1Span = useTypeWriter("Teo", 2000);
-  const headerText2 = useTypeWriter("I'm an aspiring ", 3000);
-  const headerText2Span = useTypeWriter("web developer", 3800);
-  const headerText3 = useTypeWriter(" looking for work.", 4500);
-  const headerText4 = useTypeWriter("My name is Teo Medesi. I am a 17 year old student from Croatia working as a freelancer.", 5500);
+  const headerText1 = useTypeWriter("Hello, I'm ", 1300);
+  const headerText1Span = useTypeWriter("Teo", 1750);
+  const headerText2 = useTypeWriter("I'm an aspiring ", 2600);
+  const headerText2Span = useTypeWriter("web developer", 3200);
+  const headerText3 = useTypeWriter(" looking for work.", 3600);
+  const headerText4 = useTypeWriter("My name is Teo Medesi. I am a 17 year old student from Croatia working as a freelancer.", 4500);
 
   const [skillsScope, animateSkills] = useAnimate();
   const [aboutScope, animateAbout] = useAnimate();
@@ -79,15 +77,15 @@ const Home = () => {
 
   useEffect(() => {
     // animate skills section
-    if (isSkillsInView) animateSkills(".text, .row, .row-2", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    if (isSkillsInView) animateSkills(".text, .row, .row-2", {opacity: 1}, {duration: 1, delay: stagger(0.4)});
     else animateSkills(".text, .row, .row-2", {opacity: 0});
 
     // animate about section
-    if (isAboutInView && !isSkillsInView) animateAbout(".about-header, .about-paragraph, a", {opacity: 1}, {duration: 1, delay: stagger(0.5)});
+    if (isAboutInView && !isSkillsInView) animateAbout(".about-header, .about-paragraph, a", {opacity: 1}, {duration: 1, delay: stagger(0.4)});
     else animateAbout(".about-paragraph, .about-header, a", {opacity: 0});
 
     // animate contact section
-    if (isContactInView && !isAboutInView) animateContact(".text, .input-field, .submit-button", {opacity: 1}, {duration: 1, delay: stagger(0.45)}).then(() => {
+    if (isContactInView && !isAboutInView) animateContact(".text, .input-field, .submit-button", {opacity: 1}, {duration: 1, delay: stagger(0.2)}).then(() => {
       if (isSubmitted) animateContact(".input-field", {opacity: 0.2});
     });
 
@@ -129,7 +127,9 @@ const Home = () => {
             <h5>{headerText1}<span className="h5-span">{headerText1Span}</span></h5>
             <h1>{headerText2}<span className="h1-span">{headerText2Span}</span>{headerText3}</h1>
             <p>{headerText4}</p>
+
           </div>
+          <motion.button initial={{opacity: 0}} animate={{opacity: 1, transition: {delay: 7}}} onClick={handleContactClick}>Contact me</motion.button>
         
         
         </header>
@@ -169,10 +169,10 @@ const Home = () => {
             <div className="text-col">
               <motion.h3 initial={{opacity: 0}} className="about-header">About me</motion.h3>
               <motion.p initial={{opacity: 0}} className="about-paragraph">
-                I have always been a <span>problem solver</span> and had a keen interest in <span>building things</span>. The satisfaction I feel after a long and intense project is immeasurable. My love for <span>programming</span> and all things <span>IT</span> runs deep, and I am always eager to expand my knowledge and skills. I take great pride in <span>staying up-to-date</span> with the latest trends and techniques.
+                I have always been a <span>problem solver</span> and had a keen interest in <span>building things</span>. My love for <span>programming</span> and all things <span>IT</span> runs deep, and I am always eager to expand my knowledge and skills. I take great pride in <span>staying up-to-date</span> with the latest trends and techniques.
                 <br />
                 <br />
-                <span>Integrity is paramount</span>. When working with clients or future employers, I prioritize <span>listening</span> to their needs and tailoring my approach accordingly. My goal is to deliver a product that <span>exceeds their expectations</span> and provides them with tangible value.
+                <span>I believe in integrity</span>. When working with clients or future employers, I prioritize <span>listening</span> to their needs and tailoring my approach accordingly. My goal is to deliver a product that <span>exceeds their expectations</span> and provides them with tangible value.
               </motion.p>
             </div>
             <motion.a initial={{opacity: 0}} href="https://github.com/Teo-Medesi" className="github-button"><img src={GITHUB} alt="github" /></motion.a>
@@ -182,7 +182,7 @@ const Home = () => {
           <article className="contact-me">
           <motion.div initial={{opacity: 0}} className="text">
               <h6>Contact Me!</h6>
-              <p className="xsm">The first step towards success is just a message away. Contact me using the form below, and let's start building something great together!</p>
+              <p className="xsm">The first step towards success is just a message away. Feel free to contact me using the form below, and let's start building something great together!</p>
             </motion.div>
             <motion.div initial={{opacity: 0}} className="input-field">
               <label htmlFor="name">Name</label>

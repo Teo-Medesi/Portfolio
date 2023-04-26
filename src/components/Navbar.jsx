@@ -29,7 +29,7 @@ const Navbar = ({onContact}) => {
             <motion.div className='logo-div'>
                 <p className='logo'>Teo Međeši</p>
                 <img onClick={toggleNavbar} src={menu} alt="menu icon"/>
-            </motion.div>
+            </motion.div>   
 
             <motion.ul className='links'>
                 <li>Home</li>

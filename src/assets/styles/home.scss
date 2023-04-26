@@ -276,6 +276,19 @@ header {
     }
 
 
+    button {
+        border-radius: 1rem;
+        background: $secondary2;
+        color: #ffffff;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    
+    button:hover {
+        border-radius: 1.5rem;
+    }
+
+
     .header-image {
         background: transparent;
         height: 100%;
@@ -360,8 +373,12 @@ header {
     }
     
     header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
         .header-text {
-
+                
             h1, h5, p {
                 text-align: left;
             }
@@ -395,8 +412,12 @@ header {
     }
 
     .about-me-container {
-        padding: 1rem 0;
+        padding: 1rem,;
         height: max-content;
+
+        .about-me {
+            width: 100%;
+        }
     } 
 
     .contact-me-container {
