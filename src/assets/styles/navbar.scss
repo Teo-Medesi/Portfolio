@@ -47,10 +47,12 @@ nav {
     img {
         display: block !important;
     }
-    
+
     nav {
         flex-direction: column;
+        position: fixed;
         height: max-content;
+        width: 100vw;
         background-color: $bgcolor2;
         padding: 0;
 

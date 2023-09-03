@@ -109,6 +109,7 @@ footer {
     height: 100vh;
     display: flex;
     background-image: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.1)), url("../images/background.png");
+    background-size: cover;
     justify-content: center;
     align-items: center;
 
@@ -237,6 +238,34 @@ footer {
                     }
                 }
             }
+        }
+    }
+}
+
+.ukraine-banner {
+    height: 6vh;
+    width: 100%;
+
+    .first {
+        display: block;
+        background-color: #005bbb;
+        width: 100%;
+        height: 50%;
+    }
+
+    .second {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffd500;
+        width: 100%;
+        height: 50%;
+
+        p {
+            color:#005bbb;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;;
         }
     }
 }
@@ -377,10 +406,19 @@ header {
         flex-direction: column;
         gap: 2rem;
         
+        height: 100vh;
+
         .header-text {
-                
-            h1, h5, p {
-                text-align: left;
+            h5 {
+                font-size: calc(2.5rem + 0.39vw);
+            }
+
+            h1 {
+                font-size: calc(1.5rem + 0.39vw);
+            }
+
+            p {
+                display: none;
             }
         }
     }
@@ -423,8 +461,11 @@ header {
     .contact-me-container {
         min-height: 100vh;
         
+        h6 {
+            font-size: calc(2.25rem + 0.39vw);
+        }
         p {
-            text-align: left;
+            display: none;
         }
         
         .contact-me {
