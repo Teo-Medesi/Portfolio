@@ -16,12 +16,30 @@
   }
 }
 
+.h1 {
+  @apply text-3xl;
+}
+
+* {
+  @apply text-lg;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-base-100;
+}
+
+.padding-x {
+  @apply px-4;
+}
+
+.padding-x-2 {
+  @apply px-8;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.padding-y-2 {
+  @apply py-8;
 }

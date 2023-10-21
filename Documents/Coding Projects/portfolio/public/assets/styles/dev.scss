@@ -1,0 +1,15 @@
+@import "app.scss";
+
+.dev {
+    background-color: black;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    Canvas {
+        height: 50%;
+        width: 50%;
+    }
+
+}

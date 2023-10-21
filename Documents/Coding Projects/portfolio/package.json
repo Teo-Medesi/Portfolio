@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^3.8.3",
+    "framer-motion": "^10.16.4",
+    "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.4"
+    "react-intersection-observer": "^9.5.2",
+    "react-simple-typewriter": "^5.0.1",
+    "sass": "^1.68.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",

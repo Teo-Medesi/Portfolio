@@ -1,0 +1,72 @@
+$bgcolor: #0C0B15;
+$bgcolor2: #050505;
+$primary: #F52789;
+$secondary: #8E49B2;
+$secondary2: #8d49b2ad;
+$tertiary: #ff5e00;
+$white1: #c8c8c8;
+
+$black0: #0C0C0C;   
+$black1: #171717;
+$black2: #232323;
+$black3: #343434;
+$black4: #454545;
+$black5: #898989;
+$black6: #ddff;
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: calc(15px + 0.39vw);
+}
+
+.sm {
+    font-size: calc(12px + 0.39vw) !important;
+}
+
+.xsm {
+    font-size: calc(10px + 0.39vw) !important;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    background-color: $black1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+}
+
+@media only screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    html {
+        overflow: hidden;
+    }
+}
+
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
