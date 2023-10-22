@@ -43,7 +43,7 @@ const Home = () => {
   const headerText2 = useTypeWriter("I'm an aspiring ", 2600);
   const headerText2Span = useTypeWriter("web developer", 3200);
   const headerText3 = useTypeWriter(" looking for work.", 3600);
-  const headerText4 = useTypeWriter("My name is Teo Medesi. I am a 17 year old student from Croatia specializing in React and NextJS development.", 4500);
+  const headerText4 = useTypeWriter("My name is Teo Medesi. I am a 18 year old student from Croatia specializing in React and NextJS development.", 4500);
 
   const { current: windowWidth } = useRef(window.innerWidth);
 
